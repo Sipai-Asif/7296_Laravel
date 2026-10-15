@@ -1,0 +1,23 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+
+// 1. Home Page Route
+Route::get('/', function () {
+    return '<h1>Welcome to Home Page</h1>';
+});
+
+// 2. New Page Route (Create new routes for pages)
+Route::get('/about', function () {
+    return '<h1>About Page</h1>';
+});
+
+// 3. Route with Wildcard (Use wildcards for accessing content)
+Route::get('/user/{id}', function ($id) {
+    return "<h1>User Profile</h1><p>User ID: <strong>{$id}</strong></p>";
+});
+
+// 4. Wildcard to Change Content Dynamically
+Route::get('/greet/{name}', function ($name) {
+    return "<h1>Hello, " . ucfirst($name) . "!</h1><p>Welcome to our site.</p>";
+});
