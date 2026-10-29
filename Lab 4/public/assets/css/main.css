@@ -1,0 +1,103 @@
+/* Editorial-style theme (own CSS, works without downloading anything) */
+*{box-sizing:border-box}
+html{font-size:16px}
+body{margin:0;font-family:"Source Sans Pro","Segoe UI",Helvetica,Arial,sans-serif;color:#7f888f;background:#fff;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none;border-bottom:1px dotted var(--accent)}
+a:hover{color:var(--accent);border-bottom-color:transparent}
+h1,h2,h3{color:#3d4449;font-weight:700;line-height:1.3;margin:0 0 .8em}
+h1{font-size:2.6rem}h2{font-size:1.6rem}h3{font-size:1.2rem}
+p{margin:0 0 1.5rem}
+strong{color:#3d4449}
+code{background:#f5f6f7;padding:.1em .4em;border-radius:4px;font-size:.9em}
+ul{margin:0 0 1.5rem;padding-left:1.2rem}
+
+/* layout */
+#wrapper{display:flex;min-height:100vh}
+#main{flex:1;min-width:0}
+#main>.inner{max-width:68rem;margin:0 auto;padding:3rem 3rem 2rem}
+#sidebar{width:19rem;background:#f5f6f7;border-left:1px solid #e7e9eb;flex-shrink:0;transition:margin .3s}
+#sidebar>.inner{position:sticky;top:0;padding:2rem 1.8rem;max-height:100vh;overflow-y:auto}
+#sidebar.inactive{margin-right:-19rem}
+
+/* header */
+#header{display:flex;justify-content:space-between;align-items:center;border-bottom:4px solid #f2f3f4;padding-bottom:1.2rem;margin-bottom:2.5rem}
+#header .logo{border:0;color:#3d4449;font-size:1.05rem;text-transform:uppercase;letter-spacing:.07em}
+#header .logo strong{color:var(--accent)}
+#toggle{background:none;border:1px solid #c9cacc;color:#7f888f;border-radius:4px;padding:.35rem .8rem;cursor:pointer;font:inherit;font-size:.85rem}
+#toggle:hover{color:var(--accent);border-color:var(--accent)}
+
+/* sidebar */
+#sidebar header.major h2{font-size:1rem;text-transform:uppercase;letter-spacing:.1em;border-bottom:2px solid #dfe1e3;padding-bottom:.5rem}
+#sidebar input[type=text]{width:100%;padding:.6rem .8rem;border:1px solid #dcdfe2;border-radius:4px;margin-bottom:2rem;font:inherit}
+#menu ul{list-style:none;padding:0;margin:0 0 2rem}
+#menu li a{display:block;padding:.55rem 0;border:0;color:#7f888f;border-bottom:1px solid #e7e9eb;text-transform:uppercase;font-size:.85rem;letter-spacing:.08em;font-weight:600}
+#menu li a:hover,#menu li.active a{color:var(--accent)}
+#sidebar section{margin-bottom:2rem}
+#footer .copyright{font-size:.8rem;color:#a2a6ab}
+
+/* banner */
+#banner{display:flex;align-items:center;gap:2.5rem;margin-bottom:3rem}
+#banner .content{flex:1}
+#banner h1{font-size:3rem}
+.banner-art{flex:0 0 38%;min-height:16rem;border-radius:6px;background:linear-gradient(135deg,var(--accent),#f9a18a 60%,#fbd1a2);display:flex;align-items:center;justify-content:center;color:#fff;font-size:5rem}
+header.major{margin-bottom:1.5rem}
+header.major h2{display:inline-block;border-bottom:3px solid var(--accent);padding-bottom:.3rem}
+header.main h1{font-size:2.2rem}
+
+/* buttons */
+.button,.btn{display:inline-block;padding:.65rem 1.4rem;border-radius:4px;border:0;background:var(--accent);color:#fff !important;font:inherit;font-size:.85rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;line-height:1.4}
+.button:hover,.btn:hover{background:var(--accent-hover)}
+.button.alt,.btn-outline{background:transparent;box-shadow:inset 0 0 0 2px #c9cacc;color:#7f888f !important}
+.btn-sm{padding:.3rem .8rem;font-size:.72rem}
+.btn-info{background:#4aa3df}.btn-warning{background:#e9a42d}.btn-danger{background:#d9534f}.btn-success{background:#3fae6a}.btn-secondary{background:#9aa0a6}
+.actions{list-style:none;padding:0;display:flex;gap:.8rem;flex-wrap:wrap}
+form.inline{display:inline}
+
+/* features */
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:1.5rem}
+.features article{background:#f5f6f7;border-radius:6px;padding:1.5rem}
+.features .icon{display:inline-block;width:2.4rem;height:2.4rem;border-radius:50%;background:var(--accent);color:#fff;text-align:center;line-height:2.4rem;margin-bottom:.8rem}
+
+/* tables */
+.table-wrapper{overflow-x:auto;margin-bottom:1.5rem}
+table{width:100%;border-collapse:collapse}
+th{color:#3d4449;text-align:left;padding:.7rem .8rem;border-bottom:2px solid #dfe1e3;font-size:.85rem}
+td{padding:.7rem .8rem;border-bottom:1px solid #e7e9eb}
+tbody tr:nth-child(odd){background:#fafafa}
+.text-end{text-align:right;white-space:nowrap}
+.badge{display:inline-block;padding:.15rem .7rem;border-radius:20px;font-size:.78rem;font-weight:700;color:#fff}
+.badge.Pending{background:#e9a42d}.badge.Approved{background:#3fae6a}.badge.Rejected{background:#d9534f}
+
+/* forms */
+label{display:block;color:#3d4449;font-weight:600;margin-bottom:.35rem;font-size:.9rem}
+input[type=text],input[type=email],select,textarea{width:100%;padding:.65rem .8rem;border:1px solid #dcdfe2;border-radius:4px;font:inherit;color:#3d4449;background:#fff;margin-bottom:1.1rem}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--accent)}
+.is-invalid{border-color:#d9534f !important}
+.error{color:#d9534f;font-size:.82rem;margin:-.8rem 0 1rem}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.alert{padding:.9rem 1.2rem;border-radius:4px;margin-bottom:1.5rem}
+.alert-success{background:#e4f6ec;color:#2d7a4d}
+.alert-danger{background:#fbe6e5;color:#a33a37}
+.alert-danger ul{margin:0}
+.card{background:#fff;border:1px solid #e7e9eb;border-radius:6px;padding:2rem}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:1.5rem}
+.muted{color:#a2a6ab;text-align:center;padding:2rem}
+
+/* certificate */
+.certificate{max-width:46rem;margin:0 auto;border:3px double #3d4449;padding:3rem;font-family:"Times New Roman",serif;color:#222;background:#fff}
+.certificate h2,.certificate h3{color:#111;text-align:center}
+.certificate p{font-size:1.15rem;line-height:2;text-align:justify;color:#222}
+.certificate .foot{display:flex;justify-content:space-between;margin-top:4rem}
+
+/* mobile */
+@media (max-width:980px){
+  #sidebar{position:fixed;right:0;top:0;bottom:0;z-index:10;margin-right:0;box-shadow:-4px 0 20px rgba(0,0,0,.15)}
+  #sidebar.inactive{margin-right:-19rem;box-shadow:none}
+  #main>.inner{padding:1.5rem}
+  #banner{flex-direction:column}.banner-art{width:100%;flex-basis:auto;min-height:10rem}
+  #banner h1{font-size:2.2rem}.row2{grid-template-columns:1fr}
+}
+@media print{
+  #sidebar,#header,.no-print{display:none !important}
+  #main>.inner{padding:0;max-width:none}
+}
